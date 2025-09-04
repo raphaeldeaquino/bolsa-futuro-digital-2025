@@ -12,6 +12,8 @@ Este repositório contém os materiais, atividades e referências do curso **Pro
 
 ⏰ **Horário:** 14h às 17h
 
+📍 **Local:** IFG - Reitoria
+
 ---
 
 ## 📚 Sumário
