@@ -10,7 +10,7 @@ def index():
     <body>
     <h1>Backend com Python</h1>
     <p>Esta é a página Web do curso</p>
-    <p>Os slides estão disponível <a href="slides">aqui</a>.</p>
+    <p>Os slides estão disponíveis <a href="slides">aqui</a>.</p>
     </body>
     </html>
     """
