@@ -1,0 +1,28 @@
+<html>
+
+<head>
+    <title>Bolsa Futuro Digital</title>
+</head>
+
+<body>
+    <h1>Backen com Python</h1>
+
+    <p>Esta é a página inicial do curso</p>
+
+    {% if session.user %}
+    <p>Bem-vindo(a) {{ session['user'] }}!</p>
+    <p><img src="static/{{ session['user'] }}.jpg" style="width: 10%; height: auto;" /></p>
+    <p><a href="logout">Sair</a></p>
+
+    {% else %}
+    <p>
+    <form action="login" method='POST'>
+        Digite seu nome: <input type='text' name='user'>
+        <input type='submit' value='Submit'>
+    </form>
+    </p>
+    {% endif %}
+
+</body>
+
+</html>
