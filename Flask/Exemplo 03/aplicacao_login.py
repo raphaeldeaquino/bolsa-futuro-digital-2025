@@ -17,7 +17,7 @@ def slides():
 def login(): 
     user = request.form['user'] 
     session['user'] = user 
-    return render_template('welcome.html', user=user) 
+    return render_template('welcome.html') 
 
 @app.route('/logout') 
 def logout(): 

@@ -12,6 +12,7 @@
     {% if session.user %}
     <p>Bem-vindo(a) {{ session['user'] }}!</p>
     <p><img src="static/{{ session['user'] }}.jpg" style="width: 10%; height: auto;" /></p>
+    <p>Os slides estão disponíveis <a href="/slides">aqui</a>.</p>
     <p><a href="logout">Sair</a></p>
 
     {% else %}
