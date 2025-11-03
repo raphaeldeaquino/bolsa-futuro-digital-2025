@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exemplo de API REST com JSONPlaceholder</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            background-color: #f8f9fa;
+        }
+
+        h1 {
+            color: #2c3e50;
+        }
+
+        button {
+            margin-right: 10px;
+            padding: 10px 16px;
+            border: none;
+            border-radius: 6px;
+            background-color: #3498db;
+            color: white;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+        }
+
+        pre {
+            background: #ecf0f1;
+            padding: 15px;
+            border-radius: 6px;
+            max-width: 800px;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Demo: Requisições REST com JSONPlaceholder</h1>
+    <p>Clique em um botão abaixo para fazer a requisição e ver o resultado:</p>
+
+    <button id="btnGet">GET /posts</button>
+    <button id="btnPost">POST /posts/1</button>
+
+    <h2>Resposta:</h2>
+    <pre id="output">Nenhuma requisição feita ainda.</pre>
+
+    <script>
+        const output = document.getElementById("output");
+
+        // --- Requisição GET ---
+        document.getElementById("btnGet").addEventListener("click", () => {
+            const url = "https://jsonplaceholder.typicode.com/posts";
+
+            fetch(url)
+                .then(response => {
+                    if (!response.ok) throw new Error("Erro na requisição GET");
+                    return response.json();
+                })
+                .then(data => {
+                    output.textContent = JSON.stringify(data.slice(0, 3), null, 2);
+                    console.log("Resultado da requisição GET:", data);
+                })
+                .catch(error => {
+                    console.error(error);
+                    output.textContent = "Erro: " + error.message;
+                });
+        });
+
+        // --- Requisição POST ---
+        document.getElementById("btnPost").addEventListener("click", () => {
+            const url = "https://jsonplaceholder.typicode.com/posts";
+
+            const payload = {
+                title: "Novo post de teste",
+                body: "Conteúdo do post criado via API REST",
+                userId: 99
+            };
+
+            fetch(url, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(payload)
+            })
+                .then(response => {
+                    if (!response.ok) throw new Error("Erro na requisição POST");
+                    return response.json();
+                })
+                .then(data => {
+                    output.textContent = JSON.stringify(data, null, 2);
+                    console.log("Resultado da requisição POST:", data);
+                })
+                .catch(error => {
+                    console.error(error);
+                    output.textContent = "Erro: " + error.message;
+                });
+        });
+    </script>
+
+</body>
+
+</html>
