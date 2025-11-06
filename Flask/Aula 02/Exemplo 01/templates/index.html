@@ -1,0 +1,55 @@
+<html>
+
+<head>
+    {{ bootstrap.load_css() }}
+    {% from 'bootstrap5/form.html' import render_form %}
+</head>
+<title>Flask-WTF Exemplo</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 40px;
+        text-align: center;
+    }
+
+    form {
+        display: inline-block;
+        margin-top: 20px;
+    }
+
+    label,
+    input {
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    .welcome {
+        font-size: 1.5em;
+        color: #2c3e50;
+        margin-top: 20px;
+    }
+
+    a {
+        display: block;
+        margin-top: 20px;
+        text-decoration: none;
+        color: #007bff;
+    }
+</style>
+</head>
+
+<body>
+    <h1>Bem-vindo!</h1>
+
+    {% if nome %}
+    <div class="welcome">
+        Olá, {{ nome }}! Seja bem-vindo à aplicação Flask-WTF.
+    </div>
+    <a href="{{ url_for('reset') }}">Mudar de nome</a>
+    {% else %}
+    {{ render_form(form) }}
+    {% endif %}
+    {{ bootstrap.load_js() }}
+</body>
+
+</html>
