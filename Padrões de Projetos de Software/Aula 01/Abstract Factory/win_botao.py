@@ -1,9 +1,9 @@
-from button import Button
+from botao import Botao
 
 # Produtos concretos são criados por fábricas concretas
 # correspondentes.
-class WinButton(Button):
+class WinBotao(Botao):
     
-    def paint(self) -> None:
+    def desenhar(self) -> None:
         # Renderiza um botão no estilo Windows.
         print("Renderizando botão no estilo Windows")

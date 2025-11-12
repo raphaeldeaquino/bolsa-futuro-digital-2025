@@ -2,12 +2,12 @@ from abc import ABC, abstractmethod
 
 # A interface do produto declara as operações que todos os
 # produtos concretos devem implementar.
-class Button(ABC):
+class Botao(ABC):
     
     @abstractmethod
-    def render(self) -> None:
+    def renderizar(self) -> None:
         pass
     
     @abstractmethod
-    def on_click(self, f) -> None:
+    def ao_clicar(self, f) -> None:
         pass

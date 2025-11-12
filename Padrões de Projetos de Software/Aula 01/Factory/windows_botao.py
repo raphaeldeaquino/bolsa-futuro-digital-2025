@@ -1,14 +1,14 @@
-from button import Button
+from botao import Botao
 
 # Produtos concretos fornecem várias implementações da
 # interface do produto.
-class WindowsButton(Button):
+class WindowsBotao(Botao):
     
-    def render(self) -> None:
+    def renderizar(self) -> None:
         # Renderiza um botão no estilo Windows.
         print("Renderizando botão Windows")
     
-    def on_click(self, f) -> None:
+    def ao_clicar(self, f) -> None:
         # Vincula um evento de clique do SO nativo.
         print("Vinculando evento de clique Windows")
         f()

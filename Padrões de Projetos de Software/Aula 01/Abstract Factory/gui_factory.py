@@ -1,5 +1,5 @@
 from abc import ABC, abstractmethod
-from button import Button
+from botao import Botao
 from checkbox import Checkbox
 
 
@@ -13,9 +13,9 @@ from checkbox import Checkbox
 class GUIFactory(ABC):
     
     @abstractmethod
-    def create_button(self) -> Button:
+    def criar_botao(self) -> Botao:
         pass
     
     @abstractmethod
-    def create_checkbox(self) -> Checkbox:
+    def criar_checkbox(self) -> Checkbox:
         pass

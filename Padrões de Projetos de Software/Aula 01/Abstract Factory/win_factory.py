@@ -1,7 +1,7 @@
 from gui_factory import GUIFactory
-from button import Button
+from botao import Botao
 from checkbox import Checkbox
-from win_button import WinButton
+from win_botao import WinBotao
 from win_checkbox import WinCheckbox
 
 # As fábricas concretas produzem uma família de produtos que
@@ -11,8 +11,8 @@ from win_checkbox import WinCheckbox
 # dentro do método um produto concreto é instanciado.
 class WinFactory(GUIFactory):
     
-    def create_button(self) -> Button:
-        return WinButton()
+    def criar_botao(self) -> Botao:
+        return WinBotao()
     
-    def create_checkbox(self) -> Checkbox:
+    def criar_checkbox(self) -> Checkbox:
         return WinCheckbox()
