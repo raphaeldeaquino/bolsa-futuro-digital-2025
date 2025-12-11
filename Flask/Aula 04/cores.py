@@ -17,8 +17,8 @@ template = {
         "termsOfService": "http://me.com/terms",
         "version": "0.0.1"
     },
-    "host": "mysite.com",
-    "basePath": "/api",
+    "host": "127.0.0.1:5000",
+    "basePath": "/",
     "schemes": ["http", "https"],
 }
 
@@ -61,7 +61,7 @@ def cores(paleta):
         examples:
           rgb: ['red', 'green', 'blue']
       404:
-        description: Paleta não encontrada
+        description: Paleta não encontrada. Geralmente quando é fornecido uma chave inválida
     """
     todas_cores = {
         'cmyk': ['cyan', 'magenta', 'yellow', 'black'],
