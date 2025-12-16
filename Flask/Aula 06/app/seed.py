@@ -19,7 +19,7 @@ with app.app_context():
     db.session.add_all([u1, u2, u3])
     db.session.commit()
 
-    now = datetime.utcnow()
+    now = datetime.now()
 
     # Pedidos
     orders = [
